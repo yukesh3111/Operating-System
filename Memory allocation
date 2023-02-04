@@ -1,0 +1,37 @@
+#include<stdio.h>
+#include<stdlib.h>
+int main()
+{
+int a=1000,b=500,c=250;
+int d;
+int comp=0;
+for(int i=0;;i++)
+{
+printf("Enter memory to allocate:");
+scanf("%d",&d);
+if(a>=d && comp==0)
+{
+a-=d;
+comp=1;
+printf("Balance space in A is %d\n",a);
+}
+else if(b>=d && (comp==1 || comp==0))
+{
+b-=d;
+comp=2;
+printf("Balance space in B is %d\n",b);
+}
+else if(c>=d && (comp==0 || comp==2 || comp==1))
+{
+c-=d;
+printf("Balance space in C is %d\n",c);
+printf("All memory slots are allocated \n");
+exit(-1);
+}
+else
+{
+printf("There is no allocate space!!\n");
+exit(-1);
+}
+}
+}
